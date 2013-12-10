@@ -1,0 +1,89 @@
+%----------------------------------------------------------------------------
+%Youbuer latex template
+%---------------------------------------------------------------------------
+
+
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{indentfirst}   %indent every paragraph
+\usepackage{graphicx}      %can include image \includegraphics[scale=0.5]{image}
+\usepackage{geometry}      %set up pages
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % use hrule
+\geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=20mm,
+ right=20mm,
+ top=20mm,
+ bottom=20mm,
+ bindingoffset=0mm
+ }
+
+%------------------------------------
+%\title{\textbf{Research in AIDS}}
+%\author{Fan You 0739738 \\ Bio1.101-W02 \\Professor: D.Kershan}
+%\begin{document}
+%\maketitle
+%\newpage
+%------------------------------------
+
+
+
+%------------------------------------
+%\section*{}  remove number of section
+%-------------------------------------
+
+%----------------------------------
+% code block
+%\begin{verbatim}
+%for i in range(1, 5):
+%  print i
+%else:
+%  print "The for loop is over"
+%\end{verbatim}
+%----------------------------------
+\begin{document}
+\begin{titlepage} % make title page
+\begin{center}
+
+% Upper part of the page. The '~' is needed because \\
+% only works if a paragraph has started.
+
+\textsc{\LARGE NYIT}\\[1.5cm]
+
+\textsc{\Large Project}\\[0.5cm]
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries title  \\[0.4cm] } % title
+
+\HRule \\[1.5cm]
+
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Fan
+\textsc{You}\\
+0739738
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Dr.kershan\textsc{}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+% Bottom of the page
+{\large \today}
+
+\end{center}
+\end{titlepage}
+
+
+
+\end{document}
+
