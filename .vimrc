@@ -1,8 +1,8 @@
-
 set nocompatible
 
 "use mouse everywhere
-set mouse=a
+"set mouse=a
+"set for scorll
 
 "set nu
 
@@ -33,6 +33,12 @@ set ruler
 set hls
 
 set incsearch
+
+set smartcase
+
+set autoread
+
+set noswapfile
 
 "%s/1/2/g replace 1 to 2
 
