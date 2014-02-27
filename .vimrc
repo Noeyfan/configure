@@ -40,8 +40,14 @@ set autoread
 
 set noswapfile
 
+set timeout
+set timeoutlen=0
+set ttimeout
+set ttimeoutlen=0
+
 "%s/1/2/g replace 1 to 2
 
 "set arduino
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
+
