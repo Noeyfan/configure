@@ -45,6 +45,8 @@ set timeoutlen=0
 set ttimeout
 set ttimeoutlen=0
 
+set cindent
+
 "%s/1/2/g replace 1 to 2
 
 "set arduino
