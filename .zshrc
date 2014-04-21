@@ -45,3 +45,32 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export http_proxy=http://proxy.nyit.edu:80
+alias cl='clear'
+alias bye='poweroff'
+alias op='gnome-open'
+alias cc='g++ -std=c++11 -Wall'
+#alias rake='bundle exec'
+
+#RVM
+#[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
+#export PATH=$PATH:usr/local/rvm/bin
+
+#PATH = $PATH:/home/root/.gem/ruby/2.1.0/bin
+#export PATH
+
+
+# BEGIN Ruboto setup
+source ~/.rubotorc
+# END Ruboto setup
+
+#amazon s3
+export S3_BUCKET_NAME=MuaPhoto
+export AWS_ACCESS_KEY_ID=AKIAIZEFYCHLWSOFACLQ
+export AWS_SECRET_ACCESS_KEY=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
+
+# Monkey Env Var
+export PKG_CONFIG_PATH=~/project/monkey/
+
+#Change py3 to py2
+export PATH=~/bin:$PATH
