@@ -64,11 +64,6 @@ alias cc='g++ -std=c++11 -Wall'
 source ~/.rubotorc
 # END Ruboto setup
 
-#amazon s3
-export S3_BUCKET_NAME=MuaPhoto
-export AWS_ACCESS_KEY_ID=AKIAIZEFYCHLWSOFACLQ
-export AWS_SECRET_ACCESS_KEY=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
-
 # Monkey Env Var
 export PKG_CONFIG_PATH=~/project/monkey/
 
