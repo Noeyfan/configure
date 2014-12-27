@@ -47,8 +47,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 #export http_proxy=http://proxy.nyit.edu:80
 alias cl='clear'
-alias bye='poweroff'
-alias op='gnome-open'
+#alias bye='poweroff'
+#alias op='gnome-open'
 alias cc='g++ -std=c++11 -Wall'
 #alias rake='bundle exec'
 
@@ -60,10 +60,10 @@ alias cc='g++ -std=c++11 -Wall'
 #export PATH
 
 # Monkey Env Var
-export PKG_CONFIG_PATH=~/project/monkey/
+#export PKG_CONFIG_PATH=~/project/monkey/
 
 #Change py3 to py2
-export PATH=~/bin:$PATH
+#export PATH=~/bin:$PATH
 
 ##export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
