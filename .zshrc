@@ -1,71 +1,78 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# /etc/zsh/zshrc: system-wide .zshrc file for zsh(1).
+#
+# This file is sourced only for interactive shells. It
+# should contain commands to set up aliases, functions,
+# options, key bindings, etc.
+#
+# Global Order: zshenv, zprofile, zshrc, zlogin
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="wezm+"
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
+			     /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+autoload run-help
 
-# Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+# Set up the prompt
 
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
+autoload -Uz promptinit
+promptinit
+prompt adam1
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+setopt histignorealldups
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
 
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+# Use modern completion system
+autoload -Uz compinit
+compinit
 
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+#eval "$(dircolors -b)"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-source $ZSH/oh-my-zsh.sh
+alias ls='ls -G'
+alias ll='ls -l'
+alias grep='grep --color=auto'
+alias g++='clang++'
+alias cc='g++-4.9 -Wall -std=c++11'
+alias gcc='gcc-4.9 -Wall'
+alias constexpr='ssh constexpr.dls.corp.google.com'
+export EDITOR=vim
+base_prompt="%k"
 
-# Customize to your needs...
-#export http_proxy=http://proxy.nyit.edu:80
-alias cl='clear'
-#alias bye='poweroff'
-#alias op='gnome-open'
-alias cc='g++ -std=c++11 -Wall'
-#alias rake='bundle exec'
-
-#RVM
-#[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
-#export PATH=$PATH:usr/local/rvm/bin
-
-#PATH = $PATH:/home/root/.gem/ruby/2.1.0/bin
-#export PATH
-
-# Monkey Env Var
-#export PKG_CONFIG_PATH=~/project/monkey/
-
-#Change py3 to py2
-#export PATH=~/bin:$PATH
-
-##export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-## zsh not source /etc/profile automatically
 source /etc/profile
+source ~/.profile
+
+## Android
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
+##15440
+alias ppt="rsync -r fanyou@unix.andrew.cmu.edu:/afs/andrew/course/15/440/classnotes ~/src/DS"
+
+## Trash OSX
+alias rm="rm -i"
+alias del="rm -rf"
+
+##gcc
+TCL_LIBRARY=/usr/local/Cellar/tcl-tk/8.6.3/
+DEJAGNULIBS=/usr/local/Cellar/deja-gnu/1.5.2/
+
