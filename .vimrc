@@ -1,12 +1,11 @@
+syntax on
+filetype plugin on
+filetype indent plugin on
+
 set nocompatible
-
-filetype on
-
 set history=1000
-
 set background=dark
 
-syntax on
 
 setlocal cindent
 setlocal cinoptions=>4,n-2,{2,^-2,:2,=2,g0,h2,p5,t0,+2,(0,u0,w1,m1

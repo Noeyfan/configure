@@ -4,12 +4,33 @@ run() {
 	java $1;
 }
 
-#alias cc="g++-4.9 -Wall -std=c++11"
-alias cc="~/sandbox/bin/g++ -Wall -std=c++11 -std=c++1y"
-alias gcc="gcc-4.9"
-alias gcov="gcov-4.9"
-alias g++="g++-4.9"
+###alg4
+alias javac-algs4="javac -cp /Users/fanyou/src/code/algs4/lib/algs4.jar:/Users/fanyou/src/code/algs4/lib/stdlib.jar:.:../"
+alias java-algs4="java -cp /Users/fanyou/src/code/algs4/lib/algs4.jar:/Users/fanyou/src/code/algs4/lib/stdlib.jar:.:../"
+
+###gcc
+#alias cc="g++-5 -Wall -std=c++11"
+alias cc="~/sandbox/gcc/bin/g++ -Wall -std=c++1y"
+#alias gcc="gcc-5"
+#alias gcov="gcov-5"
+#alias g++="g++-5"
+
+###LLVM & Clang
+alias lclang="/usr/local/Cellar/llvm/3.6.2/bin/clang"
+
+alias cl="clang++ -Wall -std=c++1y -I/usr/local/opt/llvm/include"
 
 alias spush="(scp ~/src/working/bits/* root@45.55.240.250:/root/src/gcc-1/libstdc++-v3/include/bits) &&
              (scp ~/src/working/experimental/memory root@45.55.240.250:/root/src/gcc-1/libstdc++-v3/include/experimental/memory)&&
              (scp -r ~/src/working/shared_ptr_arrays/* root@45.55.240.250:/root/src/gcc-1/libstdc++-v3/testsuite/experimental/memory/shared_ptr_arrays;)"
+
+export HOMEBREW_GITHUB_API_TOKEN=75af5d507e8c4a19c7ad5d6fe5e9af7704a9a375
+
+#LDFLAGS:  -L/usr/local/opt/llvm/lib
+#CPPFLAGS: -I/usr/local/opt/llvm/include
+
+#Hadoop config
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
+export PATH=${JAVA_HOME}/bin:${PATH}
+export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+export PATH="/usr/local/sbin:$PATH"
