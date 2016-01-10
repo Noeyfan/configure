@@ -24,7 +24,7 @@ alias spush="(scp ~/src/working/bits/* root@45.55.240.250:/root/src/gcc-1/libstd
              (scp ~/src/working/experimental/memory root@45.55.240.250:/root/src/gcc-1/libstdc++-v3/include/experimental/memory)&&
              (scp -r ~/src/working/shared_ptr_arrays/* root@45.55.240.250:/root/src/gcc-1/libstdc++-v3/testsuite/experimental/memory/shared_ptr_arrays;)"
 
-export HOMEBREW_GITHUB_API_TOKEN=75af5d507e8c4a19c7ad5d6fe5e9af7704a9a375
+###Github token (Should not be upload to Github)
 
 #LDFLAGS:  -L/usr/local/opt/llvm/lib
 #CPPFLAGS: -I/usr/local/opt/llvm/include
@@ -34,3 +34,4 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
 export PATH=${JAVA_HOME}/bin:${PATH}
 export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
 export PATH="/usr/local/sbin:$PATH"
+export LLVM_DIR=/usr/local/Cellar/llvm/3.6.2/share/llvm/cmake
