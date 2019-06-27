@@ -1,3 +1,6 @@
+### Append to history file right after each prompt
+PROMPT_COMMAND = 'history -a'
+
 run() {
 	cd ~/src/learn_java/;
 	javac $1.java;
